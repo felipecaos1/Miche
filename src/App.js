@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Fragment } from 'react';
+import { Link} from "react-router-dom";
 
 function App() {
   return (
@@ -18,10 +19,12 @@ function App() {
       <div className="sidebar-wrapper">
         <ul className="nav">
           <li className="active ">
-            <a href="./dashboard.html">
-              <i className="nc-icon nc-bank"></i>
+
+          <Link to="/index" >
+          <i className="nc-icon nc-bank"></i>
               <p>INICIO</p>
-            </a>
+          </Link>
+
           </li>
           <li>
             <a href="./icons.html">
@@ -75,7 +78,7 @@ function App() {
                 <span className="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a className="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+            <a className="navbar-brand" href="javascript:;">"USUARIO"</a>
           </div>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-bar navbar-kebab"></span>
@@ -85,7 +88,7 @@ function App() {
           <div className="collapse navbar-collapse justify-content-end" id="navigation">
             <form>
               <div className="input-group no-border">
-                <input type="text" value="" className="form-control" placeholder="Search..."/>
+                <input type="text" value="" className="form-control" placeholder="Buscar..."/>
                 <div className="input-group-append">
                   <div className="input-group-text">
                     <i className="nc-icon nc-zoom-split"></i>
@@ -95,14 +98,7 @@ function App() {
               
             </form>
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link btn-magnify" href="javascript:;">
-                  <i className="nc-icon nc-layout-11"></i>
-                  <p>
-                    <span className="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
+              
               <li className="nav-item btn-rotate dropdown">
                 <a className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="nc-icon nc-bell-55"></i>
