@@ -5,6 +5,7 @@ import './index.css';
 import Dashboard from './Dashboard';
 import App2 from './App2';
 import Login from './Login';
+import Addmateria from './Addmateria';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route exact path="/" element={<Login/>}/>
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/index" element={<App2/>} />
+      <Route path="/add_materias" element={<Addmateria/>}/>
     </Routes>
 </Router>
   </React.StrictMode>,

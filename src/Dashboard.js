@@ -2,6 +2,8 @@ import './App.css';
 import { Fragment } from 'react';
 import { Link} from "react-router-dom";
 
+import Prueba from './Prueba';
+
 function Dashboard() {
   return (
     
@@ -156,7 +158,7 @@ function Dashboard() {
               </div>
             </div>
           </Link>
-          <Link to="/"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -243,7 +245,7 @@ function Dashboard() {
                 <p className="card-category">24 Hours performance</p>
               </div>
               <div className="card-body ">
-                <p>ACA VA LA TABLA </p>
+                <Prueba/>
               </div>
               <div className="card-footer ">
                 <hr/>
