@@ -27,7 +27,8 @@ function Dashboard() {
           <div className="col-md-12">
             <div className="card ">
               <div className="card-body ">
-                
+                <h2>BIENVENIDO A TU ESCRITORIO</h2>
+                <h4>Miche</h4>
               </div>
               <div className="card-footer ">
                 <hr/>

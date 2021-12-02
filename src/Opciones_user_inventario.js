@@ -4,7 +4,7 @@ function Opciones_user_inventario(){
     return(
         <>
         <div className="row">
-          <Link to="/" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/list_materias" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
