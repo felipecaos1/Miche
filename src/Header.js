@@ -49,7 +49,7 @@ function Header(){
               </li>
               <li className="nav-item">
                 <a className="nav-link btn-rotate" href="javascript:;">
-                  <i className="nc-icon nc-settings-gear-65"></i>
+                  <i className="nc-icon nc-settings-gear-65">Salir</i>
                   <p>
                     <span className="d-lg-none d-md-block">Account</span>
                   </p>

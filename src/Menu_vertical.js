@@ -4,18 +4,18 @@ function Menu_vertical(){
     return (
         <>
         <div className="logo">
-        <a href="https://www.creative-tim.com" className="simple-text logo-normal">
+        <Link to="/dashboard" className="simple-text logo-normal">
                 MICHE
          {/*<!-- <div className="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->*/}
-        </a>
+        </Link>
       </div>
       <div className="sidebar-wrapper">
         <ul className="nav">
           <li className="active ">
 
-          <Link to="/index" >
+          <Link to="/dashboard" >
           <i className="nc-icon nc-bank"></i>
               <p>INICIO</p>
           </Link>
@@ -45,18 +45,8 @@ function Menu_vertical(){
               <p>User Profile</p>
             </a>
           </li>
-          <li>
-            <a href="./tables.html">
-              <i className="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i className="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
+          
+         
           
         </ul>
       </div>

@@ -5,8 +5,9 @@
     text-align: center;
     padding: 40px ;
 }
-.contenedor h2{
+.contenedor h4{
     margin-bottom: 50px;
+    margin-top: 0;
     font-family: 'poppins';
 }
 .l-col1{

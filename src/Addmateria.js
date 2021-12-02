@@ -2,6 +2,7 @@ import Menu_vertical from './Menu_vertical';
 import Header from './Header';
 import Opciones_user_inventario from './Opciones_user_inventario';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 function Addmateria(){
     return(
@@ -23,7 +24,8 @@ function Addmateria(){
               <div className="card-body ">
                   {/* aqui comienza el formulario de add materia */}
               <div className="contenedor">
-                    <h2>AÑADIR MATERIA PRIMA</h2>
+                    <h4>AÑADIR MATERIA PRIMA</h4>
+                    <form>
                     <div className="sub-contenedor">
                         <div className="l-col1">
                             <div className="row-add">
@@ -58,10 +60,14 @@ function Addmateria(){
                                 <button id="guardar">Guardar</button>
                             </div>   
                             <div className="btn-col2">
-                                <button id="Cancelar">Cancelar</button>
+                                <Link to="/dashboard">
+                                <button type="reset" id="Cancelar">Cancelar</button>
+                                </Link>
+                                
                             </div>      
 
                     </div>
+                    </form>
                 </div>
                 {/* aqui termina el formulario de add materia */}
               </div>
