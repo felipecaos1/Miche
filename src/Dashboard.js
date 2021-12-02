@@ -2,9 +2,9 @@ import './App.css';
 import { Fragment } from 'react';
 import { Link} from "react-router-dom";
 
-function App() {
+function Dashboard() {
   return (
-  <Fragment>
+    
    <div className="wrapper ">
     <div className="sidebar" data-color="white" data-active-color="danger">
       <div className="logo">
@@ -28,7 +28,7 @@ function App() {
           <li>
             <a href="./icons.html">
               <i className="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+              <p>Materias Primas</p>
             </a>
           </li>
           <li>
@@ -126,7 +126,8 @@ function App() {
      {/*<!-- End Navbar -->*/}
       <div className="content">
         <div className="row">
-          <div className="col-lg-3 col-md-6 col-sm-6">
+          
+          <Link to="/" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -137,22 +138,25 @@ function App() {
                   </div>
                   <div className="col-7 col-md-8">
                     <div className="numbers">
-                      <p className="card-category">Capacity</p>
-                      <p className="card-title">150GB</p>
+                      <p className="card-category">Materias Primas</p>
+                      <p className="card-title">Listado</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="card-footer ">
                 <hr/>
+               
                 <div className="stats">
-                  <i className="fa fa-refresh"></i>
-                  Update Now
+                  {/* <i className="fa fa-refresh"></i>
+                  VER LISTADO */}
                 </div>
+                
+                
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-6">
+          </Link>
+          <Link to="/"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -163,8 +167,8 @@ function App() {
                   </div>
                   <div className="col-7 col-md-8">
                     <div className="numbers">
-                      <p className="card-category">Revenue</p>
-                      <p className="card-title">$ 1,345</p>
+                      <p className="card-category">Materias Primas</p>
+                      <p className="card-title">Añadir</p>
                     </div>
                   </div>
                 </div>
@@ -172,13 +176,13 @@ function App() {
               <div className="card-footer ">
                 <hr/>
                 <div className="stats">
-                  <i className="fa fa-calendar-o"></i>
-                  Last day
+                  {/* <i className="fa fa-calendar-o"></i>
+                  Last day */}
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-6">
+          </Link>
+          <Link to="/" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -189,8 +193,8 @@ function App() {
                   </div>
                   <div className="col-7 col-md-8">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
-                      <p className="card-title">23</p>
+                      <p className="card-category">Materias Primas</p>
+                      <p className="card-title">Reportes</p>
                     </div>
                   </div>
                 </div>
@@ -198,13 +202,13 @@ function App() {
               <div className="card-footer ">
                 <hr/>
                 <div className="stats">
-                  <i className="fa fa-clock-o"></i>
-                  In the last hour
+                  {/* <i className="fa fa-clock-o"></i>
+                  In the last hour */}
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-6">
+          </Link>
+          {/* <div className="col-lg-3 col-md-6 col-sm-6">
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -229,9 +233,9 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="row">
+         <div className="row">
           <div className="col-md-12">
             <div className="card ">
               <div className="card-header ">
@@ -239,7 +243,7 @@ function App() {
                 <p className="card-category">24 Hours performance</p>
               </div>
               <div className="card-body ">
-                <canvas id="chartHours" width="400" height="100"></canvas>
+                <p>ACA VA LA TABLA </p>
               </div>
               <div className="card-footer ">
                 <hr/>
@@ -249,16 +253,16 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
         <div className="row">
           <div className="col-md-4">
             <div className="card ">
               <div className="card-header ">
-                <h5 className="card-title">Email Statistics</h5>
-                <p className="card-category">Last Campaign Performance</p>
+                {/* <h5 className="card-title">Email Statistics</h5>
+                <p className="card-category">Last Campaign Performance</p> */}
               </div>
               <div className="card-body ">
-                <canvas id="chartEmail"></canvas>
+               
               </div>
               <div className="card-footer ">
                 <div className="legend">
@@ -281,7 +285,7 @@ function App() {
                 <p className="card-category">Line Chart with Points</p>
               </div>
               <div className="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
+               
               </div>
               <div className="card-footer">
                 <div className="chart-legend">
@@ -300,18 +304,9 @@ function App() {
       <footer className="footer footer-black  footer-white ">
         <div className="container-fluid">
           <div className="row">
-            <nav className="footer-nav">
-              <ul>
-                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
-                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
-                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
-              </ul>
-            </nav>
             <div className="credits ml-auto">
               <span className="copyright">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>, made with <i className="fa fa-heart heart"></i> by Creative Tim
+                © 2021, Hecho con <i className="fa fa-heart heart"></i> por el Equipo 2
               </span>
             </div>
           </div>
@@ -319,9 +314,9 @@ function App() {
       </footer>
     </div>
   </div>
-  </Fragment>
+
    
   );
 }
 
-export default App;
+export default Dashboard;

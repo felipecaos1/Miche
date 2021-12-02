@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import App from './App';
+import Dashboard from './Dashboard';
 import App2 from './App2';
 import Login from './Login';
 
@@ -17,8 +17,8 @@ ReactDOM.render(
     <Router>
     <Routes>
       <Route exact path="/" element={<Login/>}/>
+      <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/index" element={<App2/>} />
-      <Route path="/dashboard" element={<App/>} />
     </Routes>
 </Router>
   </React.StrictMode>,
