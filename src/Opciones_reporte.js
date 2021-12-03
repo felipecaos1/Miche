@@ -1,22 +1,20 @@
 import {Link} from "react-router-dom";
 
-function Opciones_user_inventario(){
+function Opciones_reporte(){
     return(
         <>
         <div className="row">
-          <Link to="/list_materias" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
-            <div className="card card-stats">
+          <Link to="/" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+            <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
                   <div className="col-5 col-md-4">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-globe text-warning"></i>
-                    </div>
+                   
                   </div>
                   <div className="col-7 col-md-8">
                     <div className="numbers">
                       <p className="card-category">Materias Primas</p>
-                      <p className="card-title">Listado</p>
+                      <p className="card-title">Más Vendidas</p>
                     </div>
                   </div>
                 </div>
@@ -34,18 +32,16 @@ function Opciones_user_inventario(){
             </div>
           </Link>
           <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
-            <div className="card card-stats">
+            <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
-                  <div className="col-5 col-md-4">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-money-coins text-success"></i>
-                    </div>
+                  <div className="col-5 col-md-2">
+                    
                   </div>
-                  <div className="col-7 col-md-8">
+                  <div className="col-7 col-md-10">
                     <div className="numbers">
-                      <p className="card-category">Materias Primas</p>
-                      <p className="card-title">Añadir</p>
+                      <p className="card-category">Pedidos</p>
+                      <p className="card-title">Por Despachar</p>
                     </div>
                   </div>
                 </div>
@@ -60,18 +56,16 @@ function Opciones_user_inventario(){
             </div>
           </Link>
           <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
-            <div className="card card-stats">
+            <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
-                  <div className="col-5 col-md-4">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-vector text-danger"></i>
-                    </div>
+                  <div className="col-5 col-md-1">
+                    
                   </div>
-                  <div className="col-7 col-md-8">
+                  <div className="col-7 col-md-11">
                     <div className="numbers">
-                      <p className="card-category">Materias Primas</p>
-                      <p className="card-title">Reportes</p>
+                      <p className="card-category">Pedidos</p>
+                      <p className="card-title">Ya Despachados</p>
                     </div>
                   </div>
                 </div>
@@ -116,4 +110,4 @@ function Opciones_user_inventario(){
     )
 }
 
-export default Opciones_user_inventario;
+export default Opciones_reporte;

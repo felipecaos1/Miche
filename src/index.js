@@ -7,6 +7,7 @@ import App2 from './App2';
 import Login from './Login';
 import Addmateria from './Addmateria';
 import Listar_materias from './Listar_materias';
+import Reportes from './Reportes';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/index" element={<App2/>} />
       <Route path="/add_materias" element={<Addmateria/>}/>
       <Route path="/list_materias" element={<Listar_materias/>}/>
+      <Route path="/reportes" element={<Reportes/>}/>
     </Routes>
 </Router>
   </React.StrictMode>,
