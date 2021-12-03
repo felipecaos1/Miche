@@ -5,6 +5,7 @@ function Login(){
     return (
         <div className="container" style={{paddingTop:"50px"}}>
              <div className="text-miche">
+                <a href="index.html"><img src="assets/img/logo.png" alt="" width="80"/></a>
                 <h1>Bienvenido a Miche</h1>
                 <h5> Éste es un Sistema de Gestión de Inventario Musical en donde podrás consultar la disponibilidad de materia prima para la producción de tus instrumentos musicales, al igual que gestionar los pedidos realizados por clientes.</h5>
                 <h5>En Miche nos especializamos en la producción de instrumentos musicales de calidad desde 1980, hasta la fecha, contando con gran experiencia en el mercado a través de clientes que nos avalan.</h5>
