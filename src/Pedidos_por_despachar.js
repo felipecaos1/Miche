@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Ir_atras from './Ir_atras';
 
 
-function Listar_materias(){
+function Pedidos_por_despachar(){
     return(
         <>
          <div className="wrapper ">
@@ -23,7 +23,7 @@ function Listar_materias(){
           <div class="card">
               {/* aca empieza la table de materias primas */}
               <div class="card-header">
-                <h4 class="card-title"> Lista de Materias Primas</h4>
+                <h4 class="card-title"> Pedidos por Despachar</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -32,21 +32,17 @@ function Listar_materias(){
                         <th>
                         ID
                       </th>
+                      
                       <th>
-                        Nombre
+                       Contenido
                       </th>
                       <th>
-                        Descripcion
-                      </th>
-                      <th>
-                        Unidad
+                        Destino
                       </th>
                       <th >
-                        Disponibilidad
+                        Costo
                       </th>
-                      <th >
-                        Precio
-                      </th>
+                      
                       <th style={{textAlign:"center"}}>
                         Opciones
                       </th>
@@ -56,23 +52,19 @@ function Listar_materias(){
                         <td>
                          1
                         </td>
-                        <td>
-                          Dakota Rice
-                        </td>
+                       
                         <td>
                           Niger
                         </td>
                         <td>
                           Oud-Turnhout
                         </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
+                        
                         <td >
                           $36,738
                         </td>
                         <td style={{textAlign:"center"}}>
-                          Editar
+                          <a href="#"> Confirmar despacho </a>
                         </td>
                       </tr>
                       
@@ -92,4 +84,4 @@ function Listar_materias(){
     )
 }
 
-export default Listar_materias;
+export default Pedidos_por_despachar;

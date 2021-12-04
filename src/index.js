@@ -8,6 +8,9 @@ import Login from './Login';
 import Addmateria from './Addmateria';
 import Listar_materias from './Listar_materias';
 import Reportes from './Reportes';
+import Mas_vendidas from './Mas_vendida';
+import Pedidos_por_despachar from './Pedidos_por_despachar';
+import Pedidos_despachados from './Pedidos_despachados';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -25,6 +28,10 @@ ReactDOM.render(
       <Route path="/add_materias" element={<Addmateria/>}/>
       <Route path="/list_materias" element={<Listar_materias/>}/>
       <Route path="/reportes" element={<Reportes/>}/>
+      <Route path="/reportes/mas_vendidas" element={<Mas_vendidas/>}/>
+      <Route path="/reportes/pedidos-por-despachar" element={<Pedidos_por_despachar/>}/>
+      <Route path="/reportes/pedidos-despachados" element={<Pedidos_despachados/>}/>
+      
     </Routes>
 </Router>
   </React.StrictMode>,

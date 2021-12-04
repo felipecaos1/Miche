@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-export var rol_user=3;
+export var rol_user=2;
 // esta variable controla quien esta manejando la a plicacion
 // 1:Admi
 // 2:usuario inventario

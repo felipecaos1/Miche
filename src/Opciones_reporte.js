@@ -4,14 +4,14 @@ function Opciones_reporte(){
     return(
         <>
         <div className="row">
-          <Link to="/" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/reportes/mas_vendidas" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
-                  <div className="col-5 col-md-4">
+                  <div className="col-5 col-md-2">
                    
                   </div>
-                  <div className="col-7 col-md-8">
+                  <div className="col-7 col-md-10">
                     <div className="numbers">
                       <p className="card-category">Materias Primas</p>
                       <p className="card-title">Más Vendidas</p>
@@ -31,7 +31,7 @@ function Opciones_reporte(){
               </div>
             </div>
           </Link>
-          <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/reportes/pedidos-por-despachar" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
@@ -55,14 +55,14 @@ function Opciones_reporte(){
               </div>
             </div>
           </Link>
-          <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/reportes/pedidos-despachados" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats" style={{backgroundColor:"#afffac"}}>
               <div className="card-body ">
                 <div className="row">
                   <div className="col-5 col-md-1">
                     
                   </div>
-                  <div className="col-7 col-md-11">
+                  <div className="col-7 col-md-12">
                     <div className="numbers">
                       <p className="card-category">Pedidos</p>
                       <p className="card-title">Ya Despachados</p>

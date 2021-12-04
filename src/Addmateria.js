@@ -1,6 +1,6 @@
 import Menu_vertical from './Menu_vertical';
 import Header from './Header';
-import Opciones from './Opciones';
+import Ir_atras from './Ir_atras';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ function Addmateria(){
       <Header/>
      {/*<!-- End Navbar -->*/}
       <div className="content">
-          <Opciones/>
+          <Ir_atras/>
 
          <div className="row">
           <div className="col-md-12">
