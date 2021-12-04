@@ -8,6 +8,8 @@ import {rol_user} from "./Header";
 // 2:usuario inventario
 // 3:usuario produccion
 
+
+
 function user_opciones(){
   if (rol_user==1){
      return(
