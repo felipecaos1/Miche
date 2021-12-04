@@ -10,7 +10,7 @@ function Login(){
                 <h5> Éste es un Sistema de Gestión de Inventario Musical en donde podrás consultar la disponibilidad de materia prima para la producción de tus instrumentos musicales, al igual que gestionar los pedidos realizados por clientes.</h5>
                 <h5>En Miche nos especializamos en la producción de instrumentos musicales de calidad desde 1980, hasta la fecha, contando con gran experiencia en el mercado a través de clientes que nos avalan.</h5>
              </div>
-
+        
             <div>
             <div class="login" style={{backgroundColor:"rgba(0,0,0,0.8)",padding:"20px"}}>
                 <h1 style={{color:"#fff"}}>Login</h1>

@@ -1,19 +1,42 @@
 import { Link } from "react-router-dom";
 
+
+export var rol_user=1;
+// esta variable controla quien esta manejando la a plicacion
+// 1:Admi
+// 2:usuario inventario
+// 3:usuario produccion
+
+function user(){
+        if (rol_user==1){
+           return(
+            <a className="navbar-brand" >Administrador</a>
+           )
+        }else if(rol_user==2){
+            return (
+              <a className="navbar-brand" >Usuario Inventario</a>
+            )
+        }
+        else if(rol_user==3){
+          return (
+            <a className="navbar-brand" >Usuario Produccion</a>
+          )
+        }
+        else{
+          return (
+            <a className="navbar-brand" >"USUARIO"</a>
+          )
+        }
+    }
+
+
 function Header(){
     return(
             <>
             <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
         <div className="container-fluid">
           <div className="navbar-wrapper">
-            <div className="navbar-toggle">
-              <button type="button" className="navbar-toggler">
-                <span className="navbar-toggler-bar bar1"></span>
-                <span className="navbar-toggler-bar bar2"></span>
-                <span className="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a className="navbar-brand" href="javascript:;">"USUARIO"</a>
+            {user()}
           </div>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-bar navbar-kebab"></span>
