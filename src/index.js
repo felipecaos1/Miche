@@ -11,6 +11,10 @@ import Reportes from './Reportes';
 import Mas_vendidas from './Mas_vendida';
 import Pedidos_por_despachar from './Pedidos_por_despachar';
 import Pedidos_despachados from './Pedidos_despachados';
+import Configurar_productos from './Configurar_productos';
+import Crear_orden_produccion from './Crear_orden_produccion';
+import Listar_ordenes from './Listar_ordenes'; 
+import Listar_productos from './Listar_productos';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -31,7 +35,13 @@ ReactDOM.render(
       <Route path="/reportes/mas_vendidas" element={<Mas_vendidas/>}/>
       <Route path="/reportes/pedidos-por-despachar" element={<Pedidos_por_despachar/>}/>
       <Route path="/reportes/pedidos-despachados" element={<Pedidos_despachados/>}/>
-      
+      <Route path="/configurar-productos" element={<Configurar_productos/>}/>
+      <Route path="/crear-orden-produccion" element={<Crear_orden_produccion/>}/>
+      <Route path="/list_order" element={<Listar_ordenes/>}/>
+      <Route path="/list_productos" element={<Listar_productos/>}/>
+
+
+
     </Routes>
 </Router>
   </React.StrictMode>,

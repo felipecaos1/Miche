@@ -15,7 +15,7 @@ function user_opciones(){
      return(
        <>
       <div className="row">
-          <Link to="/list_materias" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/list_order" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
           <div className="card card-stats">
             <div className="card-body ">
               <div className="row">
@@ -367,7 +367,7 @@ function user_opciones(){
     return (
       <>
       <div className="row">
-      <Link to="/list_materias" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+      <Link to="/list_order" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
       <div className="card card-stats">
         <div className="card-body ">
           <div className="row">
@@ -397,7 +397,7 @@ function user_opciones(){
         </div>
       </div>
     </Link>
-    <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+    <Link to="/crear-orden-produccion" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
       <div className="card card-stats">
         <div className="card-body ">
           <div className="row">
@@ -424,7 +424,7 @@ function user_opciones(){
         </div>
       </div>
     </Link>
-    <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+    <Link to="/configurar-productos" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
       <div className="card card-stats">
         <div className="card-body ">
           <div className="row">
