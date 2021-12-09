@@ -45,7 +45,7 @@ function user_opciones(){
             </div>
           </div>
         </Link>
-        <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+        <Link to="/crear-orden-produccion" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -72,7 +72,7 @@ function user_opciones(){
               </div>
             </div>
           </Link>
-          <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/configurar-productos" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -110,8 +110,8 @@ function user_opciones(){
                   </div>
                   <div className="col-7 col-md-8">
                     <div className="numbers">
-                    <p className="card-title">Reportes</p>
-                      <p className="card-category">Ver</p>
+                    <p className="card-title">Ver</p>
+                      <p className="card-category">Reportes</p>
                       
                     </div>
                   </div>
@@ -185,35 +185,7 @@ function user_opciones(){
               </div>
             </div>
           </Link>
-          <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
-            <div className="card card-stats">
-              <div className="card-body ">
-                <div className="row">
-                  <div className="col-5 col-md-4">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-vector text-danger"></i>
-                    </div>
-                  </div>
-                  <div className="col-7 col-md-8">
-                    <div className="numbers">
-                      <p className="card-title">Reportes</p>
-                      <p className="card-category">Materias Primas</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card-footer ">
-                <hr/>
-                <div className="stats">
-                  {/* <i className="fa fa-clock-o"></i>
-                  In the last hour */}
-                </div>
-              </div>
-            </div>
-          </Link>
-          </div>
-          <div className="row">
+          
           <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
@@ -241,7 +213,7 @@ function user_opciones(){
               </div>
             </div>
           </Link>
-          <Link to="/reportes" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+          <Link to="/list_usuarios" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
