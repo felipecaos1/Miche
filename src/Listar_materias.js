@@ -4,6 +4,10 @@ import Footer from './Footer';
 import Ir_atras from './Ir_atras';
 
 
+const lista_materias_primas={"id":"5353","nombre":"tipo1","descripcion":"cafe prensada","unidad":"m2","cantidad":"56","precio":"29.000"};
+
+const lista=[lista_materias_primas];
+
 function Listar_materias(){
     return(
         <>
@@ -52,29 +56,35 @@ function Listar_materias(){
                       </th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                         1
-                        </td>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td >
-                          $36,738
-                        </td>
-                        <td style={{textAlign:"center"}}>
-                          Editar
-                        </td>
-                      </tr>
+                      {
+                        lista.map(item=>
+                          <tr>
+                          <td>
+                           {item.id}
+                          </td>
+                          <td>
+                          {item.nombre}
+                          </td>
+                          <td>
+                          {item.descripcion}
+                          </td>
+                          <td>
+                          {item.unidad}
+                          </td>
+                          <td>
+                          {item.cantidad}
+                          </td>
+                          <td >
+                          {item.precio}
+                          </td>
+                          <td style={{textAlign:"center"}}>
+                            Editar | eliminar
+                          </td>
+                        </tr>
+
+                          )
+                      }
+                     
                       
                     </tbody>
                   </table>

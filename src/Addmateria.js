@@ -3,8 +3,46 @@ import Header from './Header';
 import Ir_atras from './Ir_atras';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
+import {useRef, useState} from "react";
 
 function Addmateria(){
+          const ref_nombre_mp=useRef();
+          const ref_descripcion_mp=useRef();
+          const ref_unidad_mp=useRef();
+          const ref_cantidad_mp=useRef();
+          const ref_precio_mp=useRef();
+          
+          const [alert,setAlert]=useState(false);
+
+
+          
+
+    const guardar_materia_prima = ()=>{
+          const j_nombre=ref_nombre_mp.current.value;
+          const j_descripcion=ref_descripcion_mp.current.value;
+          const j_unidad=ref_unidad_mp.current.value;
+          const j_cantidad=ref_cantidad_mp.current.value;
+          const j_precio=ref_precio_mp.current.value;
+
+          //JSON para enviar a la base de datos
+
+          const item_add_materia={"nombre":j_nombre,"descripcion":j_descripcion,"unidad":j_unidad,"cantidad":j_cantidad,"precio":j_precio};
+    ////////////////////////////////////////////////////777
+          setAlert(true);
+
+          console.log(item_add_materia);
+          ref_nombre_mp.current.value="";
+          ref_descripcion_mp.current.value="";
+          ref_unidad_mp.current.value="";
+          ref_cantidad_mp.current.value="";
+          ref_precio_mp.current.value="";
+
+          setTimeout(() => {
+            setAlert(false)
+          }, 3000);
+          
+
+    }
     return(
         <>
         <div className="wrapper ">
@@ -30,11 +68,11 @@ function Addmateria(){
                         <div className="l-col1">
                             <div className="row-add">
                             <label className="addM-label">Nombre</label>
-                            <input id="nombre"/>
+                            <input ref={ref_nombre_mp} id="nombre"/>
                             </div>
                             <div className="row-add">
                             <label className="addM-label">Decripción</label>
-                            <textarea id="descripcion"/>
+                            <textarea ref={ref_descripcion_mp} id="descripcion"/>
                             </div>
                             
                         </div>
@@ -42,22 +80,22 @@ function Addmateria(){
                         <div className="r-col2">
                         <div className="row-add">
                             <label className="addM-label">Unidad/Medida</label>
-                            <input id="unidad"/>
+                            <input ref={ref_unidad_mp} id="unidad"/>
                             </div>
                             <div className="row-add">
                             <label className="addM-label">Cantidad</label>
-                            <input id="cantidad"/>
+                            <input ref={ref_cantidad_mp} id="cantidad"/>
                             </div>
                             <div className="row-add">
                             <label className="addM-label">Precio</label>
-                            <input id="precio"/>
+                            <input ref={ref_precio_mp} id="precio"/>
                             </div>
                         </div>
 
                     </div>
                     <div className="botones">
                             <div className="btn-col1">
-                                <button id="guardar">Guardar</button>
+                                <button id="guardar_mp" type="button" onClick={guardar_materia_prima}>Guardar</button>
                             </div>   
                             <div className="btn-col2">
                                 <Link to="/dashboard">
@@ -65,8 +103,9 @@ function Addmateria(){
                                 </Link>
                                 
                             </div>      
-
+                      
                     </div>
+                    {alert && <div><p style={{textAlign:"center",fontSize:"16px"}}>Se ha añadido correctamente!</p></div>}
                     </form>
                 </div>
                 {/* aqui termina el formulario de add materia */}

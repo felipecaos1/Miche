@@ -30,6 +30,8 @@ function Crear_orden_produccion(){
                         <div className="row-add nombre-producto">
                             <label className="addM-label">Codigo de la orden</label>
                             <input id="codigo-orden"/>
+                            <label className="addM-label">Destino de la orden</label>
+                            <input id="destino-orden"/>
                         </div>
                     
                     <div className="sub-contenedor">

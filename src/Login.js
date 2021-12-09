@@ -1,7 +1,31 @@
-import { Fragment } from "react";
 import { Link} from "react-router-dom";
+import {useRef} from "react";
+
+var users={
+    'user':'caos',
+    "contraseña":"123"
+}
 
 function Login(){
+    const ref_usuario=useRef();
+    const ref_contraseña=useRef();
+
+    const validar= () =>{
+        const usuario=ref_usuario.current.value;
+        const contraseña=ref_contraseña.current.value;
+        
+        var link=document.getElementById("ingresar");
+        if(usuario==users.user && contraseña==users.contraseña){
+            console.log(usuario,contraseña)
+           console.log(link.href);
+           link.href="/dashboard";
+
+        }
+        else{
+            link.href="/";
+        }
+        
+    }
     return (
         <div className="container" style={{paddingTop:"50px"}}>
              <div className="text-miche">
@@ -15,10 +39,10 @@ function Login(){
             <div class="login" style={{backgroundColor:"rgba(0,0,0,0.8)",padding:"20px"}}>
                 <h1 style={{color:"#fff"}}>Login</h1>
                 <form method="post">
-                    <input type="text" name="u" placeholder="Username" required="required" />
-                    <input type="password" name="p" placeholder="Password" required="required" />
-                    <Link to="/dashboard">
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Ingresar</button>
+                    <input ref={ref_usuario} type="text" name="u" placeholder="Username" required="required" />
+                    <input ref={ref_contraseña} type="password" name="p" placeholder="Password" required="required" />
+                    <Link id="ingresar" to="/dashboard">
+                    <button type="submit" class="btn btn-primary btn-block btn-large" onClick={validar}>Ingresar</button>
                     </Link>
                 </form>
             

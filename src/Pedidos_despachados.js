@@ -3,6 +3,9 @@ import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
 
+const pedidos_por_depachar={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
+
+const lista_pedidos=[pedidos_por_depachar];
 
 function Pedidos_despachados(){
     return(
@@ -42,28 +45,43 @@ function Pedidos_despachados(){
                       <th >
                         Costo
                       </th>
+                      <th >
+                        Fecha de creación
+                      </th>
+                      <th >
+                        Fecha de despacho
+                      </th>
                       
                       
                     </thead>
                     <tbody>
-                      <tr>
+                      {
+                        lista_pedidos.map(item =>
+                          <tr>
                         <td>
-                         1
+                         {item.id}
                         </td>
                        
                         <td>
-                          Niger
+                          {item.contenido}
                         </td>
                         <td>
-                          Oud-Turnhout
+                          {item.destino}
                         </td>
                         
                         <td >
-                          $36,738
+                          {item.costo}
+                        </td>
+                        <td >
+                          {item.fecha_creacion}
+                        </td>
+                        <td >
+                          {item.fecha_de_despacho}
                         </td>
                         
                       </tr>
-                      
+                          )
+                      }
                     </tbody>
                   </table>
                 </div>

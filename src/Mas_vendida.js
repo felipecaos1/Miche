@@ -5,6 +5,10 @@ import Ir_atras from './Ir_atras';
 
 //necesitamos una funcio que traiga los datos de la materia preima mas vendida 
 
+const mp_mas_vendida={"id":"5353","nombre":"tipo1","descripcion":"cafe prensada","unidad":"m2","cantidad_vendida":"56"};
+
+
+
 function Listar_materias(){
     return(
         <>
@@ -29,13 +33,18 @@ function Listar_materias(){
               </div>
               <div className="card-body" style={{display:"grid",gridTemplateColumns:"1fr 1fr"}}>
                   <div>
+                  <h4 className="card-title">Id:</h4>
                   <h4 className="card-title">Nombre:</h4>
                   <h4 className="card-title">Descripción:</h4>
                   <h4 className="card-title">Unidad:</h4>
                   <h4 className="card-title">Cantidad Vendida:</h4>
                   </div>
                   <div>
-                  {/* aca va la funcion que trae los datos de la materia prima mas vandida */}
+                  <h4 className="card-title">{mp_mas_vendida.id}</h4>
+                  <h4 className="card-title">{mp_mas_vendida.nombre}</h4>
+                  <h4 className="card-title">{mp_mas_vendida.descripcion}</h4>
+                  <h4 className="card-title">{mp_mas_vendida.unidad}</h4>
+                  <h4 className="card-title">{mp_mas_vendida.cantidad_vendida}</h4>
                   </div>
 
               </div>

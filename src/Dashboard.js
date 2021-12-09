@@ -1,9 +1,5 @@
 import './App.css';
-import { Fragment } from 'react';
-import { Link} from "react-router-dom";
 
-
-import Addmateria from './Addmateria';
 import Menu_vertical from './Menu_vertical';
 import Header from './Header';
 import Opciones from './Opciones';

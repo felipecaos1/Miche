@@ -3,6 +3,10 @@ import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
 
+const pedidos={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
+
+
+const lista_pedidos=[pedidos];
 
 function Pedidos_por_despachar(){
     return(
@@ -42,31 +46,42 @@ function Pedidos_por_despachar(){
                       <th >
                         Costo
                       </th>
+                      <th >
+                       Fecha de creación
+                      </th>
                       
                       <th style={{textAlign:"center"}}>
                         Opciones
                       </th>
                     </thead>
                     <tbody>
-                      <tr>
+                      {
+                        lista_pedidos.map(item =>
+                          <tr>
                         <td>
-                         1
+                         {item.id}
                         </td>
                        
                         <td>
-                          Niger
+                          {item.contenido}
                         </td>
                         <td>
-                          Oud-Turnhout
+                          {item.destino}
                         </td>
                         
                         <td >
-                          $36,738
+                          {item.costo}
+                        </td>
+                        <td >
+                          {item.fecha_creacion}
                         </td>
                         <td style={{textAlign:"center"}}>
                           <a href="#"> Confirmar despacho </a>
                         </td>
                       </tr>
+                          )
+                      }
+                      
                       
                     </tbody>
                   </table>
