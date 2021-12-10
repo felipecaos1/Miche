@@ -3,6 +3,9 @@ import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
 
+const productos={"id":"34343", "nombre":"Guitarra","materias_primas":"madera tipo 1, madera tipo 2"}
+
+const lista_pro=[productos,productos];
 
 function Listar_productos(){
     return(
@@ -41,18 +44,23 @@ function Listar_productos(){
                       
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                         145654
-                        </td>
-                        <td>
-                            Guitarra
-                        </td>
-                        <td>
-                         Madera tipo 1, madera tipo 2, Cuerdas
-                        </td>
-                        
-                      </tr>
+                      {
+                        lista_pro.map(item=>
+                          <tr>
+                          <td>
+                           {item.id}
+                          </td>
+                          <td>
+                            {item.nombre}
+                          </td>
+                          <td>
+                           {item.materias_primas}
+                          </td>
+                          
+                        </tr>
+                          )
+                      }
+                      
                       
                     </tbody>
                   </table>
