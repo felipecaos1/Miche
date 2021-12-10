@@ -6,7 +6,7 @@ import Ir_atras from './Ir_atras';
 
 const lista_materias_primas={"id":"5353","nombre":"tipo1","descripcion":"cafe prensada","unidad":"m2","cantidad":"56","precio":"29.000"};
 
-const lista=[lista_materias_primas];
+const lista=[lista_materias_primas,lista_materias_primas];
 
 function Listar_materias(){
     return(
