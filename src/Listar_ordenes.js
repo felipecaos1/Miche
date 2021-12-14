@@ -9,6 +9,9 @@ const pedidos={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereir
 
 
 const lista_pedidos=[pedidos];
+const actualizar_lista=()=>{
+
+}
 
 
 function Listar_ordenes(){
@@ -38,7 +41,7 @@ function Listar_ordenes(){
               {/* aca empieza la table de ordenes */}
               <div class="card-header" style={{display:"flex", justifyContent:"space-between"}}>
                 <h4 class="card-title"> Lista de Ordenes</h4>
-                <button type="button" >Actualizar</button>
+                <button type="button" onClick={actualizar_lista}>Actualizar</button>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
