@@ -8,6 +8,9 @@ import {rol_user} from "./Header";
 // 2:usuario inventario
 // 3:usuario produccion
 
+const alerta=()=>{
+  alert("hola");
+}
 
 
 function user_opciones(){
@@ -248,6 +251,7 @@ function user_opciones(){
         <>
         <div className="row">
         <Link to="/list_materias" className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
+            <a onClick={alerta}>
             <div className="card card-stats">
               <div className="card-body ">
                 <div className="row">
@@ -276,6 +280,7 @@ function user_opciones(){
                 
               </div>
             </div>
+            </a>
           </Link>
           <Link to="/add_materias"className="col-lg-3 col-md-6 col-sm-6" style={{textDecoration:"none"}}>
             <div className="card card-stats">

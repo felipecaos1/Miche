@@ -2,13 +2,13 @@ import Menu_vertical from './Menu_vertical';
 import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
+import { useEffect } from 'react';
+
 
 const pedidos={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
 
 
 const lista_pedidos=[pedidos];
-
-
 
 
 function Listar_ordenes(){
@@ -36,8 +36,9 @@ function Listar_ordenes(){
           <div className="col-md-12">
           <div class="card">
               {/* aca empieza la table de ordenes */}
-              <div class="card-header">
+              <div class="card-header" style={{display:"flex", justifyContent:"space-between"}}>
                 <h4 class="card-title"> Lista de Ordenes</h4>
+                <button type="button" >Actualizar</button>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
