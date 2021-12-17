@@ -101,9 +101,19 @@ function Crear_orden_produccion() {
                     .then(dato =>console.log(dato))
                     .catch(error => console.log(error))
             }
-            
+
             var fecha = new Date();
-            const orden = { "contenido": cantidad1.toString() + "-" + producto1 + " , " + cantidad2.toString() + "-" + producto2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear() }
+            const orden = { "contenido": cantidad1.toString() + "-" + producto1 + " , " + cantidad2.toString() + "-" + producto2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"fecha_de_despacho":fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"despachado":false,"estado":"sin producir" }
+            await fetch(`http://localhost:8081/GuardarOrden`, {
+                    method: 'POST',
+                    body: JSON.stringify(orden), // data can be `string` or {object}!
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(dato => dato.json())
+                    .then(dato =>console.log(dato))
+                    .catch(error => console.log(error))
         } else {
             alert("No se puede cumplir la orden hace falta: " + faltante + " : " + nameMateriFaltante)
         }
