@@ -166,19 +166,19 @@ function Configurar_productos() {
                                                     <div className="r-col2">
                                                         <h5>Cantidad</h5>
                                                         <div className="row-c">
-                                                            <input type="number" ref={ref_cmp1} id="Cmp1" />
+                                                            <input min="0" type="number" ref={ref_cmp1} id="Cmp1" />
                                                         </div>
                                                         <div className="row-c">
-                                                            <input type="number" ref={ref_cmp2} id="Cmp2" />
+                                                            <input  min="0" type="number" ref={ref_cmp2} id="Cmp2" />
                                                         </div>
                                                         <div className="row-c">
-                                                            <input type="number" ref={ref_cmp3} id="Cmp3" />
+                                                            <input min="0" type="number" ref={ref_cmp3} id="Cmp3" />
                                                         </div>
                                                         <div className="row-c">
-                                                            <input type="number" ref={ref_cmp4} id="Cmp4" />
+                                                            <input  min="0" type="number" ref={ref_cmp4} id="Cmp4" />
                                                         </div>
                                                         <div className="row-c">
-                                                            <input type="number" ref={ref_cmp5} id="Cmp5" />
+                                                            <input min="0" type="number" ref={ref_cmp5} id="Cmp5" />
                                                         </div>
                                                     </div>
 
