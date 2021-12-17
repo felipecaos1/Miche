@@ -41,58 +41,72 @@ function Crear_orden_produccion() {
 
 
 
-    const validar_orden = () => {
+    const validar_orden = async () => {
 
         //1. traer los dos productos seleccionados y la cantidad
+        let validacionOrden = null;
         const producto1 = ref_producto_1.current.value;
         const producto2 = ref_producto_2.current.value;
 
         const cantidad1 = parseInt(ref_cantidad_1.current.value);
         const cantidad2 = parseInt(ref_cantidad_2.current.value);
 
-        //2. consultar que materia prima los compone 
-        if (producto1 != "no") {
+        var MatariasPrimasRequeridas = {}
+        var MatariasPrimasRequeridas2 = {}
+        var temp;
+        var listemp = producto1.split(",")
+        var listemp2 = producto2.split(",")
 
-            const producto_seleccionado = lista_p.find(item => item.nombre == producto1);
+        listemp.forEach(element => {
+            temp = element.split("-")
+            MatariasPrimasRequeridas[temp[1]] = (parseInt(temp[0]) * parseInt(cantidad1));
+        });
+        listemp2.forEach(element => {
+            temp = element.split("-")
+            MatariasPrimasRequeridas2[temp[1]] = (parseInt(temp[0]) * parseInt(cantidad2));
+        });
 
-            const materias_primas2 = producto_seleccionado.materias_primas.split(",");
-
-            var contador = 0;
-            var costo = 0;
-            for (var i = 0; i < materias_primas2.length; i++) {
-
-                const x = materias_primas2[i].split("-")
-
-                //3. validar en la base de tados que esa materia prima este disponible
-                // consultar en la base de datos por su nombre (x[1]) una materia prima especifica y traer su cantidad disponible para comparar con la cantidad que se solicita para el pediddo y ademas el costpo de esta materia prima
-
-                /* if(x[0]*cantidad1<cantidad disponible de esa meteria prima){
-                    contador++;
-                    costo=costo+x[0]*cantidad1*preciodelametriaprima;
-                }
-                
-
-                */
-
-
+        for (let i in MatariasPrimasRequeridas2) {
+            if (i in MatariasPrimasRequeridas) {
+                MatariasPrimasRequeridas[i] = MatariasPrimasRequeridas[i] + MatariasPrimasRequeridas2[i];
+            } else {
+                MatariasPrimasRequeridas[i] = MatariasPrimasRequeridas2[i];
             }
-
-            /* if(contador==materias_primas2.length){
-                este producto si se puede realizar porque el inventario cuenta con las materias primas necesarias
-            } */
-
-
         }
-        if (producto2 != "no") {
-            /* repetir lo mismo del primer producto*/
-        }
-
+        //2. consultar que materia prima los compone 
+        var faltante = 0;
+        var nameMateriFaltante = "";
+        await fetch(`http://localhost:8081/validarOrdenProducion`, {
+            method: 'POST',
+            body: JSON.stringify(MatariasPrimasRequeridas), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(dato => dato.json())
+            .then(dato => [validacionOrden, nameMateriFaltante, faltante] = [dato.mensage, dato.NomMateria, dato.cantidadFaltante])
+            .catch(error => console.log(error))
         //4. agregar la orden a la basede da datos 
-        //preparamos el json para enviar a la base de datos 
-        var fecha = new Date();
-        const orden = { "contenido": cantidad1.toString() + "-" + producto1, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear() }
-        
-
+        //preparamos el json para enviar a la base de datos
+        if (validacionOrden) {
+            for( let i in MatariasPrimasRequeridas){
+                await fetch(`http://localhost:8081/descontarInventario`, {
+                    method: 'POST',
+                    body: JSON.stringify({"nombre":i,"cantidad":MatariasPrimasRequeridas[i]}), // data can be `string` or {object}!
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(dato => dato.json())
+                    .then(dato =>console.log(dato))
+                    .catch(error => console.log(error))
+            }
+            
+            var fecha = new Date();
+            const orden = { "contenido": cantidad1.toString() + "-" + producto1 + " , " + cantidad2.toString() + "-" + producto2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear() }
+        } else {
+            alert("No se puede cumplir la orden hace falta: " + faltante + " : " + nameMateriFaltante)
+        }
 
         //5. descontar en la base de datos la materia prima consumida
 
@@ -100,7 +114,7 @@ function Crear_orden_produccion() {
         ////////////////////////////////////////////////////
 
         //mostrar mensaje de que se añadio o que no se puedo añadir y limpiar el formulario para una proxima orden
-        setAlerto(true);
+        setAlerto(validacionOrden);
         setTimeout(() => {
             setAlerto(false)
         }, 3000);
@@ -148,7 +162,7 @@ function Crear_orden_produccion() {
                                                                 {
                                                                     lista_p.map(item =>
 
-                                                                        <option value={item._id}>{item.nombre}</option>
+                                                                        <option value={item.materias_primas}>{item.nombre}</option>
                                                                     )
                                                                 }
 
@@ -160,7 +174,7 @@ function Crear_orden_produccion() {
                                                                 {
                                                                     lista_p.map(item =>
 
-                                                                        <option value={item._id}>{item.nombre}</option>
+                                                                        <option value={item.materias_primas}>{item.nombre}</option>
                                                                     )
                                                                 }
 
