@@ -2,12 +2,33 @@ import Menu_vertical from './Menu_vertical';
 import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
+import {useState } from 'react';
+import React from 'react';
 
-const pedidos_por_depachar={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
+// const pedidos_por_depachar={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
 
-const lista_pedidos=[pedidos_por_depachar];
+// const lista_pedidos=[pedidos_por_depachar];
 
 function Pedidos_despachados(){
+
+  const [lista_pedidos,setLista_pedidos]=useState([]);
+  React.useEffect(()=>{
+    actualizar_lista();
+  },[])
+  const actualizar_lista = async () => {
+    const temp = [];
+    await fetch(`http://localhost:8081/listapedidosDespachados`)
+      .then(res => res.json())
+      .then(res => {
+        for (const iterator of res) {
+          temp.push(iterator);
+        }
+      })
+      .catch(err => alert(err))
+      console.log("actualizar",lista_pedidos);    
+      setLista_pedidos(temp);
+    }
+
     return(
         <>
          <div className="wrapper ">

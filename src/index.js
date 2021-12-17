@@ -16,6 +16,7 @@ import Crear_orden_produccion from './Crear_orden_produccion';
 import Listar_ordenes from './Listar_ordenes'; 
 import Listar_productos from './Listar_productos';
 import Listar_usuarios from './Listar_usuarios';
+import CrearUsuario  from './CrearUsuario';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -31,6 +32,7 @@ ReactDOM.render(
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/index" element={<App2/>} />
       <Route path="/add_materias" element={<Addmateria/>}/>
+      <Route path="/crear_usuario" element={<CrearUsuario/>}/>
       <Route path="/list_materias" element={<Listar_materias/>}/>
       <Route path="/reportes" element={<Reportes/>}/>
       <Route path="/reportes/mas_vendidas" element={<Mas_vendidas/>}/>

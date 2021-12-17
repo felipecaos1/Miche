@@ -5,36 +5,36 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import { useRef, useState } from "react";
 
-function Addmateria() {
+function CrearUsuario() {
 
 
 
-  const ref_nombre_mp = useRef();
-  const ref_descripcion_mp = useRef();
-  const ref_unidad_mp = useRef();
-  const ref_cantidad_mp = useRef();
-  const ref_precio_mp = useRef();
+  const ref_nombre = useRef();
+  const ref_apellido = useRef();
+  const ref_cargo = useRef();
+  const ref_usuario = useRef();
+  const ref_constrasena = useRef();
 
   const [alert, setAlert] = useState(false);
 
 
 
 
-  const guardar_materia_prima = () => {
-    const j_nombre = ref_nombre_mp.current.value;
-    const j_descripcion = ref_descripcion_mp.current.value;
-    const j_unidad = ref_unidad_mp.current.value;
-    const j_cantidad = ref_cantidad_mp.current.value;
-    const j_precio = ref_precio_mp.current.value;
+  const guardar_usuario = () => {
+    const nombre = ref_nombre.current.value;
+    const apellido = ref_apellido.current.value;
+    const cargo = ref_cargo.current.value;
+    const usuario = ref_usuario.current.value;
+    const contrasena = ref_constrasena.current.value;
 
     //JSON para enviar a la base de datos
 
-    const item_add_materia = { "nombre": j_nombre, "descripcion": j_descripcion, "unidad": j_unidad, "cantidad": j_cantidad, "precio": j_precio ,"cantidadVendida":0};
+    const user = { "nombre": nombre, "apellido": apellido, "cargo": cargo, "usuario": usuario, "contrasena": contrasena };
     ////////////////////////////////////////////////////
     let status = ""
-    fetch(`http://localhost:8081/agregarMateriaPrima`, {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify(item_add_materia), // data can be `string` or {object}!
+    fetch(`http://localhost:8081/crearUsuario`, {
+      method: 'POST', // or 'PUT'co
+      body: JSON.stringify(user), // data can be `string` or {object}!
       headers: {
         'Content-Type': 'application/json'
       }
@@ -45,12 +45,12 @@ function Addmateria() {
 
     setAlert(status);
 
-    console.log(item_add_materia);
-    ref_nombre_mp.current.value = "";
-    ref_descripcion_mp.current.value = "";
-    ref_unidad_mp.current.value = "";
-    ref_cantidad_mp.current.value = "";
-    ref_precio_mp.current.value = "";
+    console.log(user);
+    ref_nombre.current.value = "";
+    ref_apellido.current.value = "";
+    ref_cargo.current.value = "";
+    ref_usuario.current.value = "";
+    ref_constrasena.current.value = "";
 
     setTimeout(() => {
       setAlert(status)
@@ -77,40 +77,45 @@ function Addmateria() {
                   <div className="card-body ">
                     {/* aqui comienza el formulario de add materia */}
                     <div className="contenedor">
-                      <h4>AÑADIR MATERIA PRIMA</h4>
+                      <h4>CREAR USUARIO</h4>
                       <form>
                         <div className="sub-contenedor">
                           <div className="l-col1">
                             <div className="row-add">
                               <label className="addM-label">Nombre</label>
-                              <input ref={ref_nombre_mp} id="nombre" />
+                              <input ref={ref_nombre} id="nombre" />
                             </div>
                             <div className="row-add">
-                              <label className="addM-label">Decripción</label>
-                              <textarea ref={ref_descripcion_mp} id="descripcion" />
+                              <label className="addM-label">Apellido</label>
+                              <input ref={ref_apellido} id="descripcion" />
                             </div>
 
                           </div>
 
                           <div className="r-col2">
                             <div className="row-add">
-                              <label className="addM-label">Unidad/Medida</label>
-                              <input ref={ref_unidad_mp} id="unidad" />
+                              <label className="addM-label">Cargo</label>
+                              {/* <input ref={ref_cargo} id="unidad" /> */}
+                              <select ref={ref_cargo}> 
+                                 <option value={1}>Administrador</option>
+                                 <option value={2}>Usuario inventario</option>
+                                 <option value={3}>Usuario produccion</option>
+                               </select>
                             </div>
                             <div className="row-add">
-                              <label className="addM-label">Cantidad</label>
-                              <input ref={ref_cantidad_mp} id="cantidad" />
+                              <label className="addM-label">Usuario</label>
+                              <input ref={ref_usuario} id="cantidad" />
                             </div>
                             <div className="row-add">
-                              <label className="addM-label">Precio</label>
-                              <input ref={ref_precio_mp} id="precio" />
+                              <label className="addM-label">Constraseña</label>
+                              <input   ref={ref_constrasena} id="precio" />
                             </div>
                           </div>
 
                         </div>
                         <div className="botones">
                           <div className="btn-col1">
-                            <button id="guardar_mp" type="button" onClick={guardar_materia_prima}>Guardar</button>
+                            <button id="guardar_mp" type="button" onClick={guardar_usuario}>Guardar</button>
                           </div>
                           <div className="btn-col2">
                             <Link to="/dashboard">
@@ -143,4 +148,4 @@ function Addmateria() {
   )
 }
 
-export default Addmateria;
+export default CrearUsuario;

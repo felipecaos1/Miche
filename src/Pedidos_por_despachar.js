@@ -2,13 +2,48 @@ import Menu_vertical from './Menu_vertical';
 import Header from './Header';
 import Footer from './Footer';
 import Ir_atras from './Ir_atras';
+import {useState } from 'react';
+import React from 'react';
 
-const pedidos={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
+// const pedidos={"id":"5353","contenido":"1-guitarr, 2-tambores","destino":"Pereira","costo":"59.000","fecha_creacion":"23/7/2021","fecha_de_despacho":"4/8/2021"};
 
-
-const lista_pedidos=[pedidos];
 
 function Pedidos_por_despachar(){
+
+  const [lista_pedidos, setLista] = useState([]);
+  React.useEffect(() => {
+    actualizar_lista();
+  }, [])
+
+  const actualizar_lista = async () => {
+    const temp = [];
+    await fetch(`http://localhost:8081/listapedidosPorDespachar`)
+      .then(res => res.json())
+      .then(res => {
+        for (const iterator of res) {
+          temp.push(iterator);
+        }
+      })
+      .catch(err => alert(err))
+    setLista(temp);
+  }
+
+  function confirmarDespacho(id) {
+    fetch(`http://localhost:8081/confirmarDespacho`,{
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify({_id:id}), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(res => alert(res.msg))
+      .catch(err => console.log(err))
+      setTimeout(() => {
+        actualizar_lista()
+      }, 1000);
+  }
+
     return(
         <>
          <div className="wrapper ">
@@ -76,7 +111,7 @@ function Pedidos_por_despachar(){
                           {item.fecha_creacion}
                         </td>
                         <td style={{textAlign:"center"}}>
-                          <a href="#"> Confirmar despacho </a>
+                          <a href="#" onClick={() => confirmarDespacho(item._id)}> Confirmar despacho </a>
                         </td>
                       </tr>
                           )
