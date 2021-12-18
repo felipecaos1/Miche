@@ -1,28 +1,36 @@
+
 import { Link} from "react-router-dom";
 import {useRef} from "react";
 
+
+
+
 var users={
     'user':'caos',
-    "contraseña":"123"
+    'contraseña':'123'
 }
 
 function Login(){
     const ref_usuario=useRef();
     const ref_contraseña=useRef();
 
+   
+    
     const validar= () =>{
         const usuario=ref_usuario.current.value;
         const contraseña=ref_contraseña.current.value;
         
-        var link=document.getElementById("ingresar");
+        
         if(usuario==users.user && contraseña==users.contraseña){
             console.log(usuario,contraseña)
-           console.log(link.href);
-           link.href="/dashboard";
+            
+           
 
         }
         else{
-            link.href="/";
+            console.log("hols");
+         
+           
         }
         
     }
@@ -43,7 +51,7 @@ function Login(){
                     <input ref={ref_contraseña} type="password" name="p" placeholder="Password" required="required" />
                     <Link id="ingresar" to="/dashboard">
                     <button type="submit" class="btn btn-primary btn-block btn-large" onClick={validar}>Ingresar</button>
-                    </Link>
+                     </Link> 
                 </form>
             
              </div>

@@ -45,7 +45,7 @@ function Addmateria() {
 
     setAlert(status);
 
-    console.log(item_add_materia);
+    console.log(status);
     ref_nombre_mp.current.value = "";
     ref_descripcion_mp.current.value = "";
     ref_unidad_mp.current.value = "";
@@ -53,7 +53,7 @@ function Addmateria() {
     ref_precio_mp.current.value = "";
 
     setTimeout(() => {
-      setAlert(status)
+      setAlert(false)
     }, 3000);
 
 
