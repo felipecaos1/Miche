@@ -42,8 +42,8 @@ function Dashboard() {
           <div className="col-md-4">
             <div className="card ">
               <div className="card-header ">
-                {/* <h5 className="card-title">Email Statistics</h5>
-                <p className="card-category">Last Campaign Performance</p> */}
+                 <h5 className="card-title">Perfil</h5>
+                <p className="card-category">Actualiza tu perfil</p> 
               </div>
               <div className="card-body ">
                
@@ -65,8 +65,8 @@ function Dashboard() {
           <div className="col-md-8">
             <div className="card card-chart">
               <div className="card-header">
-                <h5 className="card-title">NASDAQ: AAPL</h5>
-                <p className="card-category">Line Chart with Points</p>
+                <h5 className="card-title">Noticias</h5>
+                <p className="card-category">Reporte de notificaciones </p>
               </div>
               <div className="card-body">
                
