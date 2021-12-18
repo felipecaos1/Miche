@@ -45,12 +45,27 @@ function Crear_orden_produccion() {
 
         //1. traer los dos productos seleccionados y la cantidad
         let validacionOrden = null;
-        const producto1 = ref_producto_1.current.value;
-        const producto2 = ref_producto_2.current.value;
+        var nomMateria1 = ref_producto_1.current.value;
+        var nomMateria2 = ref_producto_2.current.value;
+        var producto1 = "";
+        var producto2 ="";
+
+        for (const iterator of lista_p) {
+            if(iterator["nombre"]===nomMateria1){
+                producto1 = iterator["materias_primas"]
+            }
+            if(iterator["nombre"]===nomMateria2){
+                producto2 = iterator["materias_primas"]
+            }
+        }
+
+        
 
         const cantidad1 = parseInt(ref_cantidad_1.current.value);
         const cantidad2 = parseInt(ref_cantidad_2.current.value);
 
+        
+        
         var MatariasPrimasRequeridas = {}
         var MatariasPrimasRequeridas2 = {}
         var temp;
@@ -103,7 +118,7 @@ function Crear_orden_produccion() {
             }
 
             var fecha = new Date();
-            const orden = { "contenido": cantidad1.toString() + "-" + producto1 + " , " + cantidad2.toString() + "-" + producto2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"fecha_de_despacho":fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"despachado":false,"estado":"sin producir" }
+            const orden = { "contenido": cantidad1.toString() + "-" + nomMateria1 + " , " + cantidad2.toString() + "-" + nomMateria2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"fecha_de_despacho":fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"despachado":false,"estado":"sin producir" }
             await fetch(`http://localhost:8081/GuardarOrden`, {
                     method: 'POST',
                     body: JSON.stringify(orden), // data can be `string` or {object}!
@@ -172,7 +187,7 @@ function Crear_orden_produccion() {
                                                                 {
                                                                     lista_p.map(item =>
 
-                                                                        <option value={item.materias_primas}>{item.nombre}</option>
+                                                                        <option value={item.nombre}>{item.nombre}</option>
                                                                     )
                                                                 }
 
@@ -184,7 +199,7 @@ function Crear_orden_produccion() {
                                                                 {
                                                                     lista_p.map(item =>
 
-                                                                        <option value={item.materias_primas}>{item.nombre}</option>
+                                                                        <option value={item.nombre}>{item.nombre}</option>
                                                                     )
                                                                 }
 
