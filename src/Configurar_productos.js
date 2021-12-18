@@ -78,6 +78,21 @@ function Configurar_productos() {
             .then(dato => dato.json())
             .then(dato =>  dato.msg)
             .catch(error => console.log(error))
+
+            ref_nombre_producto.current.value="";
+             ref_mp1.current.value = "no";
+             ref_mp2.current.value = "no";
+             ref_mp3.current.value = "no";
+             ref_mp4.current.value = "no";
+             ref_mp5.current.value = "no";
+
+             ref_cmp1.current.value = "";
+             ref_cmp2.current.value = "";
+             ref_cmp3.current.value = "";
+             ref_cmp4.current.value = "";
+             ref_cmp5.current.value = "";
+             
+             alert("Se ha añadido");
     }
 
     return (
