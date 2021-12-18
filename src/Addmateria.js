@@ -20,7 +20,7 @@ function Addmateria() {
 
 
 
-  const guardar_materia_prima = () => {
+  const guardar_materia_prima = async () => {
     const j_nombre = ref_nombre_mp.current.value;
     const j_descripcion = ref_descripcion_mp.current.value;
     const j_unidad = ref_unidad_mp.current.value;
@@ -32,7 +32,7 @@ function Addmateria() {
     const item_add_materia = { "nombre": j_nombre, "descripcion": j_descripcion, "unidad": j_unidad, "cantidad": j_cantidad, "precio": j_precio ,"cantidadVendida":0};
     ////////////////////////////////////////////////////
     let status = ""
-    fetch(`http://localhost:8081/agregarMateriaPrima`, {
+    await fetch(`http://localhost:8081/agregarMateriaPrima`, {
       method: 'POST', // or 'PUT'
       body: JSON.stringify(item_add_materia), // data can be `string` or {object}!
       headers: {
@@ -43,9 +43,9 @@ function Addmateria() {
       .then(dato => status = dato.msg)
       .catch(error => console.log(error))
 
+    console.log(status);
     setAlert(status);
 
-    console.log(status);
     ref_nombre_mp.current.value = "";
     ref_descripcion_mp.current.value = "";
     ref_unidad_mp.current.value = "";
