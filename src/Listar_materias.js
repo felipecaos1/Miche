@@ -55,17 +55,27 @@ function Listar_materias() {
     
   }
 
-  const actualizar_mp=(id2)=>{
+  const actualizar_mp= async (id2)=>{
     //recojemos los datos de los input de editar
     const editar_nombre=ref_nombre.current.value;
     const editar_descripcion=ref_descripcion.current.value;
     const editar_unidad=ref_unidad.current.value;
     const editar_disponibilidad=ref_disponibilidad.current.value;
     const editar_precio=ref_precio.current.value;
-
-    ///consultar a la base de datos con el nombre y actualizar 
-    
-  
+    var materiPrimaActualizada = {"nombre":editar_nombre,"descripcion":editar_descripcion,"unidad":editar_unidad,"cantidad":editar_disponibilidad,"precio":editar_precio}
+    // /consultar a la base de datos con el nombre y actualizar 
+    await fetch(`http://localhost:8081/editarMateriaPrima`, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(materiPrimaActualizada), // data can be `string` or {object}!
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(dato => dato.json())
+      .then(dato => alert(dato.msg))
+      .catch(error => console.log(error))
+      ocultar();
+      actualizar_lista();
   }
 
   return (
