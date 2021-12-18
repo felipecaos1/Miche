@@ -43,7 +43,7 @@ function Addmateria() {
       .then(dato => status = dato.msg)
       .catch(error => console.log(error))
 
-    console.log(status);
+    
     setAlert(status);
 
     ref_nombre_mp.current.value = "";
