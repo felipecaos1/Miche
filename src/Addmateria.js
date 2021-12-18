@@ -15,7 +15,7 @@ function Addmateria() {
   const ref_cantidad_mp = useRef();
   const ref_precio_mp = useRef();
 
-  const [alert, setAlert] = useState(false);
+  const [alertt, setAlertt] = useState(false);
 
 
 
@@ -43,7 +43,7 @@ function Addmateria() {
       .then(dato => status = dato.msg)
       .catch(error => console.log(error))
 
-    setAlert(status);
+    //setAlertt(status);
 
     console.log(status);
     ref_nombre_mp.current.value = "";
@@ -52,11 +52,12 @@ function Addmateria() {
     ref_cantidad_mp.current.value = "";
     ref_precio_mp.current.value = "";
 
-    setTimeout(() => {
-      setAlert(false)
-    }, 3000);
+    // setTimeout(() => {
+    //   setAlert(false)
+    // }, 3000);
 
-
+    alert("Se ha añadido correctamente");
+    
   }
   return (
     <>
