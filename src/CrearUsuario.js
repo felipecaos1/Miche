@@ -20,7 +20,7 @@ function CrearUsuario() {
 
 
 
-  const guardar_usuario = () => {
+  const guardar_usuario = async() => {
     const nombre = ref_nombre.current.value;
     const apellido = ref_apellido.current.value;
     const cargo = ref_cargo.current.value;
@@ -32,7 +32,7 @@ function CrearUsuario() {
     const user = { "nombre": nombre, "apellido": apellido, "cargo": cargo, "usuario": usuario, "contrasena": contrasena };
     ////////////////////////////////////////////////////
     let status = ""
-    fetch(`http://localhost:8081/crearUsuario`, {
+    await fetch(`http://localhost:8081/crearUsuario`, {
       method: 'POST', // or 'PUT'co
       body: JSON.stringify(user), // data can be `string` or {object}!
       headers: {
@@ -45,7 +45,7 @@ function CrearUsuario() {
 
     setAlert(status);
 
-    console.log(user);
+    
     ref_nombre.current.value = "";
     ref_apellido.current.value = "";
     ref_cargo.current.value = "";
@@ -53,7 +53,7 @@ function CrearUsuario() {
     ref_constrasena.current.value = "";
 
     setTimeout(() => {
-      setAlert(status)
+      setAlert(false)
     }, 3000);
 
 

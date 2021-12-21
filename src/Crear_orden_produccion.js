@@ -118,7 +118,7 @@ function Crear_orden_produccion() {
             }
 
             var fecha = new Date();
-            const orden = { "contenido": cantidad1.toString() + "-" + nomMateria1 + " , " + cantidad2.toString() + "-" + nomMateria2, "destino": ref_destino_op.current.value, "costo": "50.000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"fecha_de_despacho":fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"despachado":false,"estado":"sin producir" }
+            const orden = { "contenido": cantidad1.toString() + "-" + nomMateria1 + " , " + cantidad2.toString() + "-" + nomMateria2, "destino": ref_destino_op.current.value, "costo": "50000", "fecha_creacion": fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"fecha_de_despacho":fecha.getDate() + "-" + fecha.getMonth() + "-" + fecha.getFullYear(),"despachado":false,"estado":"sin producir" }
             await fetch(`http://localhost:8081/GuardarOrden`, {
                     method: 'POST',
                     body: JSON.stringify(orden), // data can be `string` or {object}!
@@ -139,6 +139,13 @@ function Crear_orden_produccion() {
         ////////////////////////////////////////////////////
 
         //mostrar mensaje de que se añadio o que no se puedo añadir y limpiar el formulario para una proxima orden
+        
+         ref_codigo_op.current.value ="" ;
+         ref_destino_op.current.value ="" ;
+         ref_cantidad_1.current.value ="" ;
+         ref_cantidad_2.current.value ="" ;
+         ref_producto_1.current.value ="no";
+         ref_producto_2.current.value ="no";
         setAlerto(validacionOrden);
         setTimeout(() => {
             setAlerto(false)

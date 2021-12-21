@@ -47,7 +47,7 @@ function Pedidos_despachados(){
           <div class="card">
               {/* aca empieza la table de materias primas */}
               <div class="card-header">
-                <h4 class="card-title"> Pedidos por Despachar</h4>
+                <h4 class="card-title"> Pedidos Despachados</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
